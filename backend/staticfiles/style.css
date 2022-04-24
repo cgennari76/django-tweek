@@ -1,0 +1,71 @@
+.modal {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    position: absolute;
+    top: 0px;
+    z-index: 1;
+    display: none;
+    justify-content: center;
+    /*center horizontally*/
+    align-items: center;
+    /* center vertically */
+}
+
+/* Modal Content/Box */
+.modal-content {
+    width: 600px;
+    height: 300px;
+    background-color: white;
+    border: none;
+    border-radius: 15px;
+    padding: 15px;
+    position: relative;
+}
+
+/* The Close Button */
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+@media screen and (max-width: 1290px) {
+    .thirdcol {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 1010px) {
+
+    .tweekbutton,
+    .dropdown {
+        display: none;
+    }
+}
+#trends{
+    background-color:rgba(235, 235, 235, 0.932); 
+    width:350px;
+    border-radius: 25px;
+}
+.tweetsec, .post{
+    border: 1px solid rgb(240, 233, 233);
+}
+.posts{
+    display: block ;
+    border-top: 20px solid rgb(212, 212, 212);
+   
+}
+.posting {
+    font-size:medium;
+    margin:5px;
+    padding: 5px;;
+}
