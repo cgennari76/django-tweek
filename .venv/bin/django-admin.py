@@ -1,4 +1,4 @@
-#!/home/chris/python-projects/htmlcss/.venv/bin/python3
+#!/home/chris/python-projects/django-tweek/.venv/bin/python3
 # When the django-admin.py deprecation ends, remove this script.
 import warnings
 

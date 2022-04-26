@@ -1,46 +1,64 @@
-{% extends 'base.html' %}
-{% load static %}
-{% block content %}
+{% extends 'base.html' %} {% load static %} {% block content %}
+
+<div class="container">
+  <!-- Trigger Open The Modal -->
+  <button id="myBtn" class="btn-primary btn h2 lightBlue get-Started-btn form-control">Tweek</button>
+    <!-- posts with timestamp -->
+    <div class="posts">
+      {% for post in allposts %}
+      <div class="post">
+        <br />
+        <p class="username time" style="float: right">
+          {{post.timestamp | timesince}}
+        </p>
+        <p class="posting" style="margin-bottom: 20px">{{ post.post }}</p>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>
 
 <div class="row">
-  <div style="width: 400px;">
-      <div style="margin-left: 120px;">
-      
-      <!-- Trigger Open The Modal -->
-      <button id="myBtn">Tweek</button>
-
+  <div style="width: 400px">
+    <div style="margin-left: 120px">
       <!-- The Modal -->
       <div id="myModal" class="modal">
-
-      <!-- Modal content -->
-      <div class="modal-content">
-        <div class="modal-header">
-          <span class="close">&times;</span>
-          <h2>Send a tweek</h2>
-        </div>
-        <div class="modal-body">
-          <form action="{% url 'tweek' %}" method="post" enctype="multipart/form-data">
-            {% csrf_token %}
-            <span class="ml-2"></span>{{ form.post.label_tag }}
-            <input type='text' class='form-control' placeholder="Post" name='post'>
-            <button type="submit" class="tweekbutton" style="width:100px;float:right;margin:0;">Tweek</button>
-          </form>
-        </div>
-        <div class="modal-footer">
-          <h3>See all the tweeks</h3>
+        <!-- Modal content -->
+        <div class="modal-content">
+          <div class="modal-header">
+            <span class="close">&times;</span>
+            <h2>Send a tweek</h2>
+          </div>
+          <div class="modal-body">
+            <form
+              action="{% url 'tweek' %}"
+              method="post"
+              enctype="multipart/form-data"
+            >
+              {% csrf_token %}
+              <span class="ml-2"></span>{{ form.post.label_tag }}
+              <input
+                type="text"
+                class="form-control"
+                placeholder="Post"
+                name="post"
+              />
+              <button
+                type="submit"
+                class="btn-primary btn h2 lightBlue get-Started-btn"
+              >
+                Tweek
+              </button>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <h3>See all the tweeks</h3>
+          </div>
         </div>
       </div>
     </div>
+
+    {% endblock %}
   </div>
-
-  <div class="posts">
-    {% for post in allposts %}
-    <div class="post">
-      <br>
-      <p class="username time" style="float:right"> {{post.timestamp | timesince}} </p>
-      <p class="posting" style="margin-bottom:20px;"> {{ post.post }} </p>
-    </div>
-  </div> 
-      {% endfor %}
-
-{% endblock %}
+</div>
+</div>
